@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { Hello } from './components/Hello';
 const exp1 = <div className="some">2 + 3 = {2 + 3}</div>
 const date = new Date();
 const odd = <div>нечётный</div>
@@ -40,6 +41,8 @@ return <div className='user' key={user.id}>
 </div>
 })
 
+
+
 function App() {
   return (
     <div className="App">
@@ -59,6 +62,10 @@ function App() {
         {jsxItems}
         {image}
         <h1>Привет, мир!</h1>
+        <Hello name ='Матвей' text="Привет" />
+        <Hello name ='Артём' text="Hello"></Hello>
+        <Hello name ='Геннадий' />
+        <Hello onClickHandler={()=> alert('Ура')}></Hello>
         {exp1}
         {date.toLocaleTimeString()}
  {result}
