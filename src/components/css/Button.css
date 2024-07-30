@@ -9,3 +9,7 @@
     background: rgb(58, 127, 255);
     cursor: pointer;
    }
+   .btn-proceed {
+    padding: 10px 20px;
+    display: block;
+    width: 100%; }
