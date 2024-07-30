@@ -6,7 +6,8 @@ import BasketPromoInfo from "./BasketPromoInfo" ;
 import BasketTotal from "./BasketTotal";
 import BasketPromoCode from "./BasketPromoCode" ;
 import Button from "./Button";
-const Basket = ({ items }) => {
+const Basket = ( props ) => {
+    const [items, setItems] = React.useState(props.items);
 const countItemsInBasket = items.reduce((acc, next) => acc + next.qty, 9);
 const amountTotal = items.reduce(
 (acc, next) => acc + next.price * next.qty,
@@ -17,8 +18,10 @@ return (
 <BasketHeader count={countItemsInBasket} />
 <div className="Basket__items">
 {items.map((item) => (
-<BasketItem {...item} key={item.uid} />
+ <BasketItem {...item} key={item.uid} items={items} setItems={setItems} />
 ))}
+
+
 <BasketPromoInfo code={"REACTSPECIALIST"} />
 <BasketTotal value={amountTotal} currency={"P"} />
 </div>
