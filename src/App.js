@@ -1,5 +1,7 @@
 import "./App.css";
 import Basket from "./components/Basket.js";
+import Clicker from './components/Clicker'
+import Like from "./components/Like.js";
 function App() {
 const items = [
 {
@@ -27,8 +29,15 @@ return (
 <div className="App">
 <header className="App-header" >
 <h1>Корзина</h1>
+
+<Clicker value={2}/>
+<Like value={1}/>
 <Basket items={items} />
 </header>
 </div>
-)}
+
+
+)
+
+ }
 export default App; 
